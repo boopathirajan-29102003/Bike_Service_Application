@@ -1,0 +1,69 @@
+.Ordermain{
+    width:100%;
+    display: flex;
+    background-color: #2f2fa2;
+    border-top:2px solid  black;
+}
+.process{
+    background-color: rgb(5, 81, 5);
+}
+.process:hover{
+    background-color: rgb(128, 186, 41);
+}
+.completed{
+    background-color: red;
+}
+.completed:hover{
+    background-color: rgb(248, 80, 80);
+}
+.show{
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+h2{
+    color: #fff;
+}
+.label{
+    margin-left: 30px ;
+    }
+    input[type="checkbox"]{
+        height: 20px;
+        width: 20px;
+    }
+    .services{
+        font-weight:500 ;
+    }
+    .checkedItems{
+        display: flex;
+    }
+    .check{
+        margin: 10px;
+        float: left;
+    }
+    .container {
+        width: 50%;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 3px 4px 5px 6px rgba(0, 0, 0, 0.1);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    p{
+        color: rgb(0, 0, 0);
+    }
+    .group{
+        margin: 40px auto;
+        align-content: center;
+    }
+    @media only screen and (max-width:700px){
+        .container {
+            width: 70%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 3px 4px 5px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }   
+    }
+    
