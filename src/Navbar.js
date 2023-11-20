@@ -7,14 +7,14 @@ import { useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   var Auth
-  const location=useLocation();
-  const data=location.state;
+  const location = useLocation();
+  const data = location.state;
   const [openSidebar, setOpenSidebar] = useState(false);
-  if(data){
-    Auth=true;
+  if (data) {
+    Auth = true;
   }
-  else{
-    Auth=false
+  else {
+    Auth = false
   }
   const handleOpenSidebar = () => {
     setOpenSidebar(!openSidebar);
@@ -38,15 +38,15 @@ export default function Navbar() {
           <ul>
             <li>
               <a href="/service">Services</a>
-            </li>           
+            </li>
             <li>
               <a href="/placeorder/orders">Orders</a>
             </li>
             <li>
-              {Auth?
-              (<a style={{ border: "2px solid #f64c72" }}  href="/logout">Logout</a>)
-              :
-              (<a style={{ border: "2px solid #f64c72" }}  href="/logout">login</a>)}
+              {Auth ?
+                (<a style={{ border: "2px solid #f64c72" }} href="/logout">Logout</a>)
+                :
+                (<a style={{ border: "2px solid #f64c72" }} href="/logout">login</a>)}
             </li>
           </ul>
         </div>

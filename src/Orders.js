@@ -9,12 +9,12 @@ const Orders = () => {
 
   const [order, setOrders] = useState([]);
   const data = location.state;
-  const email=data.email;
+  const email = data.email;
   useEffect(() => {
-      const fetchData = async () => {
-      const response = await axios.post("http://localhost:5000/./dataofuser",{email});
+    const fetchData = async () => {
+      const response = await axios.post("http://localhost:5000/./dataofuser", { email });
       const orders = response.data;
-      
+
       setOrders(orders);
     };
     fetchData();
@@ -43,11 +43,12 @@ const Orders = () => {
                   <label htmlFor="service" className='label'>Water Service</label>
                 </div>
               </div>
-              <p>Final date - {(item.final_date).slice(0,10)}</p>
-              {!item.current_status ?(
-                <button type='button' className='process' value="processing" onClick={()=>{
-                  item.current_status=!item.current_status}}>processing..</button>
-              ):(
+              <p>Final date - {(item.final_date).slice(0, 10)}</p>
+              {!item.current_status ? (
+                <button type='button' className='process' value="processing" onClick={() => {
+                  item.current_status = !item.current_status
+                }}>processing..</button>
+              ) : (
                 <button type='button' className='completed' value="Completed">Completed</button>
               )
               }

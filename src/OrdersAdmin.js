@@ -3,7 +3,7 @@ import axios from 'axios';
 import './css/orders.css'
 import EmailJS from 'emailjs-com';
 import { useLocation } from 'react-router-dom';
-import { serviceId,templateId,publicKey } from './sendEmail';
+import { serviceId, templateId, publicKey } from './sendEmail';
 
 
 const Orders = () => {
@@ -12,7 +12,7 @@ const Orders = () => {
   const [order, setOrders] = useState([]);
 
   useEffect(() => {
-      const fetchData = async () => {
+    const fetchData = async () => {
       const response = await axios.get("http://localhost:5000/./data");
       const orders = response.data;
       setOrders(orders);
@@ -21,17 +21,18 @@ const Orders = () => {
   }, []);
   const data = location.state;
   console.log(data);
-  const value={email:"boopathirajan29102003@gmail.com",
-              data:"sucessfully completed"
-}
-  const handleComplete=(email)=>{
-    axios.post('http://localhost:5000/./changestatus',{email})
-    .then(async res =>{
-      console.log(res.data)
+  const value = {
+    email: "boopathirajan29102003@gmail.com",
+    data: "sucessfully completed"
+  }
+  const handleComplete = (email) => {
+    axios.post('http://localhost:5000/./changestatus', { email })
+      .then(async res => {
+        console.log(res.data)
         await EmailJS.send(serviceId, templateId, value, publicKey);
-    }).catch(err=>{
-      console.log(err);
-    })
+      }).catch(err => {
+        console.log(err);
+      })
   }
   return (
     <div className='Ordermain'>
@@ -55,8 +56,8 @@ const Orders = () => {
                   <label htmlFor="service" className='label'>Water Service</label>
                 </div>
               </div>
-              <p>Final date - {(item.final_date).slice(0,10)}</p>
-                  <button type='button' className='completed' value="processing" onClick={handleComplete(item.email)}>Complete</button>
+              <p>Final date - {(item.final_date).slice(0, 10)}</p>
+              <button type='button' className='completed' value="processing" onClick={handleComplete(item.email)}>Complete</button>
             </div>
           </>
         ))}

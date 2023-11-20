@@ -36,12 +36,12 @@ const Login = props => {
                         const data = {
                             name: res.data.name,
                             email: res.data.email,
-                            position: res.data.pos, 
-                            Auth:true
+                            position: res.data.pos,
+                            Auth: true
                         }
-                        navigate({state:data})
-                        if(data.position==='admin')
-                            navigate("/ordersadmin",{state:data})
+                        navigate({ state: data })
+                        if (data.position === 'admin')
+                            navigate("/ordersadmin", { state: data })
                         else
                             navigate("/service", { state: data })
                     }

@@ -1,21 +1,21 @@
-import React, { useLocation,useNavigate } from "react-router-dom";
+import React, { useLocation, useNavigate } from "react-router-dom";
 import './css/services.css'
 
 const Services = () => {
     const location = useLocation();
-    const navigate= useNavigate();
-    const data=location.state;
+    const navigate = useNavigate();
+    const data = location.state;
     var name
-    if(data){
-        name=data.name;
+    if (data) {
+        name = data.name;
     }
-    const handleOrders=()=>{
-        navigate('/placeorder',{state:data})
+    const handleOrders = () => {
+        navigate('/placeorder', { state: data })
     }
-    
+
     return (
         <div className='main'>
-            <br/>
+            <br />
             <div className='information'>
                 <h3>Hello {name},</h3>
                 <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I mentioned some services that are available
@@ -32,7 +32,7 @@ const Services = () => {
                             Engine oil and filter change, Tire pressure check and inflation, Brake inspection,
                             Fluid level checks and top-offs, Air filter replacement, Spark plug replacement
                             General inspection of the vehicle's components. The cost of a general service in India varies depending on the type of vehicle, the make and model, and the location. However, you can expect to pay around <span >Rs. 1,500 to Rs. 2,500</span> for a general service for a hatchback or sedan.</p>
-                    </div> 
+                    </div>
                     <div className='img2 img' >
                         <img src={require('./images/oil_change.avif')} alt='oil change' />
                         <p className="headings" style={{ color: '#f64c72' }} onClick={handleOrders}>Oil change </p>

@@ -19,9 +19,9 @@ const App = () => {
           <Route path="/service" element={<><Navbar /><Services /></>} />
           <Route path="/logout" element={<><Navbar /><Login /></>} />
           <Route path="/placeorder" element={<><Navbar /><ServicePlace /></>} />
-          <Route path="/ordersAdmin" element={<><Navbar /><OrdersAdmin/></>} />
-          <Route path="/placeorder/orders" element={<><Navbar /><Orders/></>} />
-          <Route path="/placeorder/logout" element={<><Navbar /><Login/></>} />
+          <Route path="/ordersAdmin" element={<><Navbar /><OrdersAdmin /></>} />
+          <Route path="/placeorder/orders" element={<><Navbar /><Orders /></>} />
+          <Route path="/placeorder/logout" element={<><Navbar /><Login /></>} />
         </Routes>
       </Router>
     </>

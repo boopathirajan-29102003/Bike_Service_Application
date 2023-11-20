@@ -12,7 +12,7 @@ function SignUp() {
   const [password, setPassword] = useState('')
   const [position, setPosition] = useState('')
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -28,13 +28,13 @@ function SignUp() {
     else {
       axios.post('http://localhost:5000/./signup', { name, email, mno, password, position })
         .then(res => {
-         console.log(res)
+          console.log(res)
         })
         .catch(err => {
           console.log(err);
-        }) 
+        })
     }
-    window.location.href='/login'
+    window.location.href = '/login'
   }
   return (
     <div className="container">

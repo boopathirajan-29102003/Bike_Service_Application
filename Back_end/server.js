@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 5000;
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/bike_service");
+mongoose.connect("CONNECTION_ID_OF_MONGODB_DATABASE");
 
 app.use(bodyParser.json());
 app.use(cors())
